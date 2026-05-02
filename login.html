@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <main>
+        <div class="clock" id="clock-box"></div>
+        <div class="ascii-container">
+        <pre class="ascii-art">
+$$$$$$$$\                                $$\                     $$\       $$$$$$$\                       $$\      $$$$$$\           $$\ $$\           
+\__$$  __|                               \__|                    $$ |      $$  __$$\                      $$ |    $$  __$$\          $$ |\__|          
+   $$ | $$$$$$\   $$$$$$\  $$$$$$\$$$$\  $$\ $$$$$$$\   $$$$$$\  $$ |      $$ |  $$ | $$$$$$\   $$$$$$\ $$$$$$\   $$ /  \__|$$$$$$\  $$ |$$\  $$$$$$\  
+   $$ |$$  __$$\ $$  __$$\ $$  _$$  _$$\ $$ |$$  __$$\  \____$$\ $$ |      $$$$$$$  |$$  __$$\ $$  __$$\\_$$  _|  $$$$\    $$  __$$\ $$ |$$ |$$  __$$\ 
+   $$ |$$$$$$$$ |$$ |  \__|$$ / $$ / $$ |$$ |$$ |  $$ | $$$$$$$ |$$ |      $$  ____/ $$ /  $$ |$$ |  \__| $$ |    $$  _|   $$ /  $$ |$$ |$$ |$$ /  $$ |
+   $$ |$$   ____|$$ |      $$ | $$ | $$ |$$ |$$ |  $$ |$$  __$$ |$$ |      $$ |      $$ |  $$ |$$ |       $$ |$$\ $$ |     $$ |  $$ |$$ |$$ |$$ |  $$ |
+   $$ |\$$$$$$$\ $$ |      $$ | $$ | $$ |$$ |$$ |  $$ |\$$$$$$$ |$$ |      $$ |      \$$$$$$  |$$ |       \$$$$  |$$ |     \$$$$$$  |$$ |$$ |\$$$$$$  |
+   \__| \_______|\__|      \__| \__| \__|\__|\__|  \__| \_______|\__|      \__|       \______/ \__|        \____/ \__|      \______/ \__|\__| \______/ 
+</pre>
+        </div>
+        <div class="login-form">
+            <div class="upper-section">
+                <div class="pf-box">
+                    <img src="img/login-pf.png" alt="pf-img" class="pf-img">
+                </div>
+                <div class="input-container">
+                    <input type="text" id="username" placeholder="Username" autofocus>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+            </div>
+            <div id="alert-box" class="alert-box" style="display: none;"></div>
+            <div class="lower-section">
+                <button onclick="window.location.reload()">Cancel</button>
+                <button onclick="handleLogin()">Login</button>
+            </div>
+        </div>
+        <div class="heroName">Dev.WaiYanNaing </div>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>

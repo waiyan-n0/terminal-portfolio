@@ -1,0 +1,72 @@
+*{
+    padding: .1rem .1rem;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    background-color: #2C0822;
+    color: #ffffff;
+    font-size: large;;
+}
+
+.terminal-box{
+    display: block;
+    word-break: break-all;
+}
+.prompt {
+    display: inline;
+    color: #00ff00;
+    font-weight: 500;
+    white-space: pre;
+}
+.terminal-input {
+    display: inline;
+    background: transparent;
+    outline: none;
+    min-width: 10px;
+    white-space: pre-wrap;
+    caret-color: #05f10c;
+    word-break: break-all;
+}
+.terminal-block-cursor {
+    caret-shape: block;
+}
+.command-output {
+    padding: .1rem .1rem;
+    white-space: pre-line;
+}
+
+.ascii-art {
+    white-space: pre;
+    font-weight: 600;
+}
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+.social-icons img {
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+}
+.education-section{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+.education-section img{
+    width: 12vh;
+    height: 15vh;;
+}
+
+.social-icons img:hover {
+    transform: translateY(-4px);
+}
+.social-icons img:active {
+    transform: translateY(0);
+}
+
+.project-lists{
+    display: inline;
+    line-height: 1.8;
+}
