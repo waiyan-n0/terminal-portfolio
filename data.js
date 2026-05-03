@@ -23,6 +23,7 @@ const helpData = {
     'projects': "view projects that I've coded",
     'pwd': 'print current working directory',
     'quit': 'logout the terminal',
+    'skills': 'view my skills',
     'socials': 'view my social media links',
     'welcome': 'display hero section',
     'whoami': 'current user name'
