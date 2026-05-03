@@ -25,6 +25,7 @@ const helpData = {
     'quit': 'logout the terminal',
     'skills': 'view my skills',
     'socials': 'view my social media links',
+    'themes': 'change terminal themes',
     'welcome': 'display hero section',
     'whoami': 'current user name'
 }
@@ -81,5 +82,5 @@ const skillsData = {
 }
 
 const themeData = {
-    os: ['Windows 10'],
+    themes: ['ubuntu','kali', 'flamingo']
 }

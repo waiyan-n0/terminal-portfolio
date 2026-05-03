@@ -16,11 +16,15 @@ const terminalInput = document.querySelector('.terminal-input');
 const terminalWrapper = document.querySelector('.terminal-wrapper');
 const terminalForm = document.querySelector('.terminal-form');
 
-const Commands = ['about', 'clear', 'help', 'history', 'projects', 'skills', 'socials', 'echo', 'education', 'email', 'gui', 'welcome', 'pwd', 'whoami'];
+const Commands = ['about', 'clear', 'help', 'history', 'projects', 'skills', 'socials', 'themes', 'echo', 'education', 'email', 'gui', 'welcome', 'pwd', 'whoami'];
 let commandHistory = [];
 let historyIndex = -1;
 
+// document.addEventListener("DOMContentLoaded",()=>{
+//     initTheme();
+// });
 window.onload = () => {
+    initTheme();
     const activePrompt = document.querySelector('.terminal-form .prompt');
     if (activePrompt) {
         activePrompt.textContent = `${userName}@waiyannaing-terminal:~$`;
@@ -108,6 +112,19 @@ const commandsHandler = (input) => {
         commandHistory.push(input.trim());
         historyIndex = commandHistory.length;
     }
+    // if(cmd === 'set'){
+    //     const subCmd = args[1];
+    //     const themeName = args[2];
+    //     if(subCmd === 'themes'){
+    //         if (!themeName) {
+    //             themeError("Usage: set themes &lt;theme-name&gt;", terminalWrapper, terminalForm);
+    //             return;
+    //         }
+    //     applyTheme(cmd,subCmd, themeName, terminalWrapper, terminalForm);
+    //     }else{
+    //         themeError(themeName, terminalWrapper, terminalForm);
+    //     }
+    // }
     switch(cmd){
         case 'about':
             about(terminalWrapper, terminalForm);
@@ -139,11 +156,27 @@ const commandsHandler = (input) => {
         case 'projects':
             projects(terminalWrapper, terminalForm);
             return;
+        case 'themes':
+            themes(terminalWrapper, terminalForm);
+            return;
         case 'pwd':
             commandOutput.innerText = '/portfolio/waiyannaing';
             break;
         case 'quit':
             quit();
+            return;
+        case 'set':
+            const subCmd = args[1];
+            const themeName = args[2];
+            if (subCmd === 'themes') {
+                if (!themeName) {
+                    themeError(`${args[0]} ${args[1]}`, terminalWrapper, terminalForm);
+                    return;
+                }
+                applyTheme(input, themeName, terminalWrapper, terminalForm);
+            } else {
+                themeError(input, terminalWrapper, terminalForm);
+            }
             return;
         case 'skills':
             skills(terminalWrapper, terminalForm);

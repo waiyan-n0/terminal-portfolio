@@ -1,10 +1,35 @@
+
+body {
+    --bg-color: #2C0822;
+    --text-color: #ffffff;
+    --prompt-color: #00ff00;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.theme-kali {
+    --bg-color: #0A191F;
+    --text-color: #fff;
+    --prompt-color: #EF0010;
+}
+
+body.theme-flamingo {
+    --bg-color: #EDBDBE;
+    --text-color: #000000;
+    --prompt-color: #D41468;
+}
+
+.prompt {
+    color: var(--prompt-color);
+}
+
 *{
     padding: .1rem .1rem;
     margin: 0;
     box-sizing: border-box;
     font-family: monospace;
-    background-color: #2C0822;
-    color: #ffffff;
     font-size: large;;
 }
 
@@ -14,7 +39,6 @@
 }
 .prompt {
     display: inline;
-    color: #00ff00;
     font-weight: 500;
     white-space: pre-wrap;
 }

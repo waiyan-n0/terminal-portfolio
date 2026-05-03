@@ -55,11 +55,11 @@ const help = (wrapper, terminalForm) =>{
     
     let helpText = "<br>";
     for (const [command, description] of Object.entries(helpData)) {
-        helpText += `<span style="color: #00ff00; width: 100px; display: inline-block;">${command}</span> - ${description}<br>`;
+        helpText += `<span class='prompt' style="width: 100px; display: inline-block;">${command}</span> - ${description}<br>`;
     }
     helpText += "<br><span style='text-decoration: underline;'>Useful Shortcuts:</span><br>";
     for (const [tip, desription] of Object.entries(helpTips)) {
-        helpText += `<span style="color: #00ffff; width: 100px; display: inline-block;">${tip}</span> - ${desription}<br>`;
+        helpText += `<span class='prompt' style="width: 100px; display: inline-block;">${tip}</span> - ${desription}<br>`;
     }
     helpText += "<br>";
     
@@ -112,6 +112,38 @@ const socials = (wrapper, terminalForm) => {
 <p>Telegram: <a href="${socialsData.telegram}" target="_blank">${socialsData.telegram}</a></p>
     `;
     wrapper.insertBefore(socialsContainer, terminalForm);
+}
+
+const themes = (wrapper, terminalForm) => {
+    const themesContainer = document.createElement('div');
+    themesContainer.className = 'command-output';
+    themesContainer.innerHTML = `${themeData.themes.map(theme => `${theme}\t`).join('')}
+<br><p>Usage: <span>set themes &lt;theme-name&gt;</span></p>
+    `;
+    wrapper.insertBefore(themesContainer, terminalForm);
+}
+const initTheme = () => {
+    const savedTheme = localStorage.getItem('set-theme') || 'ubuntu';
+    document.body.className = `theme-${savedTheme}`;
+};
+
+const applyTheme = (Input, themeName, wrapper, terminalForm) => {
+    const validThemes = ['ubuntu', 'kali', 'flamingo'];
+    
+    if (validThemes.includes(themeName)) {
+        validThemes.forEach(t => document.body.classList.remove(`theme-${t}`));
+        document.body.classList.add(`theme-${themeName}`);
+        localStorage.setItem('set-theme', themeName);
+    } else {
+        themeError(Input, wrapper, terminalForm);
+    }
+};
+
+const themeError = (inputString, wrapper, terminalForm) => {
+    const div = document.createElement('div');
+    div.className = 'command-output';
+    div.innerText = `Command not found: ${inputString}.`;
+    wrapper.insertBefore(div, terminalForm);
 }
 
 const echo = (input, terminalForm) => {
