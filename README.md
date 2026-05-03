@@ -2,6 +2,8 @@
 A sleek, Linux-inspired terminal portfolio website featuring a functional login system, interactive command-line interface, and real-time system monitoring vibes.
 This project allows users to explore my background, projects, and skills through a functional Command Line Interface (CLI) built for the web.
 
+To view my portfolio => 
+
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-success)
 
