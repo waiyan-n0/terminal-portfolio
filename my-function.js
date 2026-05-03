@@ -134,7 +134,7 @@ const gui = () => {
 }
 const quit = () => {
     localStorage.removeItem('userData');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 const projects = (wrapper, terminalForm) => {
     const projectsContainer = document.createElement('div');
@@ -146,6 +146,36 @@ const projects = (wrapper, terminalForm) => {
     `).join('')}
     `;
     wrapper.insertBefore(projectsContainer, terminalForm);
+}
+
+const skills = (wrapper, terminalForm) => {
+    const skillsContainer = document.createElement('div');
+    skillsContainer.className = 'command-output';
+    const line = "+----------------+-------------------------------------------+";
+    const header = "| Category       | Tech Stack                                |";
+    
+    const rows = [
+        { cat: "Languages", data: skillsData.languages.join(', ') },
+        { cat: "Frameworks", data: skillsData.frameworks.join(', ') },
+        { cat: "Tools", data: skillsData.tools.join(', ') }
+    ];
+
+    const tableRows = rows.map(row => {
+        const catCol = row.cat.padEnd(14, ' ');
+        const dataCol = row.data.padEnd(41, ' ');
+        return `| ${catCol} | ${dataCol} |`;
+    }).join('\n');
+
+    skillsContainer.innerHTML = `
+<pre style="line-height: 1.5;">
+${line}
+${header}
+${line}
+${tableRows}
+${line}
+</pre>`;
+
+    wrapper.insertBefore(skillsContainer, terminalForm);
 }
 
 //autocomplete command
@@ -164,6 +194,7 @@ const autocomplete = (input, availableCommands) => {
     }
 }
 
+// Fuzzy Search using Levenshtein Distance
 const getLevenshteinDistance = (a, b) => {
     const matrix = [];
     for (let i = 0; i <= b.length; i++) matrix[i] = [i];
@@ -178,7 +209,7 @@ const getLevenshteinDistance = (a, b) => {
                     matrix[i - 1][j - 1] + 1, // substitution
                     matrix[i][j - 1] + 1,     // insertion
                     matrix[i - 1][j] + 1      // deletion
-                );
+                );  
             }
         }
     }

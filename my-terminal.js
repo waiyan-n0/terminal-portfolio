@@ -8,7 +8,7 @@ const getSavedUser = () => {
 };
 const userData = localStorage.getItem('userData');
     if (!userData) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
 }
 const userName = getSavedUser();
 
@@ -16,7 +16,7 @@ const terminalInput = document.querySelector('.terminal-input');
 const terminalWrapper = document.querySelector('.terminal-wrapper');
 const terminalForm = document.querySelector('.terminal-form');
 
-const Commands = ['about', 'clear', 'help', 'history', 'projects', 'socials', 'echo', 'education', 'email', 'gui', 'welcome', 'pwd', 'whoami'];
+const Commands = ['about', 'clear', 'help', 'history', 'projects', 'skills', 'socials', 'echo', 'education', 'email', 'gui', 'welcome', 'pwd', 'whoami'];
 let commandHistory = [];
 let historyIndex = -1;
 
@@ -144,6 +144,9 @@ const commandsHandler = (input) => {
             break;
         case 'quit':
             quit();
+            return;
+        case 'skills':
+            skills(terminalWrapper, terminalForm);
             return;
         case 'socials':
             socials(terminalWrapper, terminalForm);

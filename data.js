@@ -72,3 +72,13 @@ const projectsData = {
         },
     ]
 }
+
+const skillsData = {
+    languages: ['HTML5', 'CSS3', 'JavaScript', 'Python', 'Java'],
+    frameworks: ['React', 'Node.js', 'OpenCV'],
+    tools: ['Git', 'Github', 'VS Code']
+}
+
+const themeData = {
+    os: ['Windows 10'],
+}
