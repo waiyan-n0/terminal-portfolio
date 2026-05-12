@@ -162,7 +162,7 @@ const echo = (input, terminalForm) => {
 };
 
 const gui = () => {
-    window.open('https://waiyannaing-portfolio.netlify.app/', '_blank');
+    window.open('https://waiyannaingdev.vercel.app/', '_blank');
 }
 const quit = () => {
     localStorage.removeItem('userData');

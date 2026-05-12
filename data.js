@@ -53,9 +53,9 @@ const emailData = {
 
 const socialsData = {
     github: "https://github.com/waiyan-n0",
-    dev: "https://waiyannaing-portfolio.netlify.app/",
+    dev: "https://waiyannaingdev.vercel.app/",
     linkedin: "https://www.linkedin.com/in/waiyan-naing-355224272/",
-    telegram: "t.me/waiyandev",
+    telegram: "https://t.me/waiyandev",
 }
 
 const projectsData = {
